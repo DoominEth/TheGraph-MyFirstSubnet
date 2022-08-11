@@ -1,0 +1,26 @@
+specVersion: 0.0.4
+description: CVX Subgraph API
+repository: https://github.com/DoominEth/TheGraph-MyFirstSubnet
+schema:
+  file: token.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: Transfer
+    network: mainnet
+    source:
+      address: "0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B"
+      abi: CVX
+      startBlock: 12450988
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      file: Transfer\Transfer.wasm
+      entities:
+        - Transfer
+      abis:
+        - name: CVX
+          file: Transfer\abis\CVX.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer

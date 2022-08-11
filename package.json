@@ -1,0 +1,26 @@
+{
+  "name": "thegraph-myfirstsubnet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "codegen": "graph codegen ./token.yaml",
+    "deploy": "graph deploy --product hosted-service --node https://api.thegraph.com/deploy/ --ipfs https://api.thegraph.com/ipfs cvx-transfers ./token.yaml --access-token"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DoominEth/TheGraph-MyFirstSubnet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DoominEth/TheGraph-MyFirstSubnet/issues"
+  },
+  "homepage": "https://github.com/DoominEth/TheGraph-MyFirstSubnet#readme",
+  "devDependencies": {
+    "@graphprotocol/graph-cli": "0.33.0",
+    "@graphprotocol/graph-ts": "0.27.0",
+    "typescript": "^4.2.4"
+  }
+}
